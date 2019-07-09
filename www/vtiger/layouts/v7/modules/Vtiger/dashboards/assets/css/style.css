@@ -1,0 +1,202 @@
+/*body{
+	position: relative;
+	background-color: #f1f1f1;
+	height: 100%;
+	font-size: 13px;
+}
+*/
+/*Home*/
+/*.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: 0;
+}
+
+.navbar-toggler span {
+   display: block;
+   background-color: #444;
+   height: 3px;
+   width: 25px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   position: relative;
+   left: 0;
+   opacity: 1;
+}
+
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+   -webkit-transition: transform .35s ease-in-out;
+   -moz-transition: transform .35s ease-in-out;
+   -o-transition: transform .35s ease-in-out;
+   transition: transform .35s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    left: 35px;
+    top: 30px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    opacity: 0.9;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 12px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    left: 35px;
+    top: 30px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    opacity: 0.9;
+}
+*/
+
+
+.vappmenu{
+	background-color: #1461bd;
+}
+.wrap .row{
+	margin: 0;
+}
+.wrap .col-4{
+	padding: 5px;
+}
+.wrap .item{
+	background:#fff;
+	border-radius: 10px;
+	padding: 10px;
+}
+.wrap .item img{
+	width: 40px;
+}
+.wrap .item h4{
+	font-size: 12px;
+	color: #555;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+.vappmenu .navbar-toggler span{
+	background: #fff;
+}
+.vappmenu .navbar-brand{
+	color: #fff;
+}
+.cd-accordion-menu input[type=checkbox] {
+  /* hide native checkbox */
+  position: absolute;
+  opacity: 0;
+}
+  .cd-accordion-menu label, .cd-accordion-menu a {
+  position: relative;
+  display: block;
+  padding: 18px 18px 18px 64px;
+  background: #4d5158;
+  box-shadow: inset 0 -1px #555960;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+  /* show children when item is checked */
+  display: block;
+}
+.menu-accordion a{
+  color: #fff;
+}
+
+/*Detail*/
+.person .container{
+
+}
+.person .container .row.row1{
+  padding: 20px 20px 40px 40px;
+  background: #1461bd;
+}
+.person .container .col-left{
+  padding: 0;
+}
+.person .container .col-left .name{
+  background: #fff;
+  border-radius: 50%;
+  /*padding: 10px;*/
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color:#1461bd;
+}
+.person .container .col-right{
+  color: #fff;
+}
+.person .container .col-right h4{
+  margin-bottom: 0;
+}
+.person .container .row1 .back{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.person .container .row1 .back a{
+  font-size: 18px;
+  color: #fff;
+}
+.person .container .row2 {
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
+.person .container .row2 .col{
+  padding: 5px;
+}
+.person .container .row2 .icon-box{
+    height: 40px;
+    background: #fff;
+  /*  color: #1461bd;*/
+    font-size: 22px;
+    border-radius: 50%;
+    width: 40px;
+    margin: 0 auto;
+}
+.person .container .row2 .icon-box a{
+  color: #1461bd;
+}
+.person .container .row2 .icon-box i{
+  padding-top: 10px;
+}
+/*.person .container .row2 .icon-box i.fa-phone{
+  transform: rotate(90deg);
+}*/
+
+
+.detail{
+  background: #fff;
+}
+.detail nav .nav{
+  border: none;
+}
+.detail nav .nav a.nav-link{
+  font-size: 16px;
+  color: #1461bd;
+}
+.detail nav .nav a.nav-link.active{
+  border:none;
+  border-bottom: 2px solid #1461bd;
+  color: #1461bd;
+}
