@@ -1,0 +1,80 @@
+190515 13:45:50 [Note] Plugin 'FEDERATED' is disabled.
+190515 13:45:51  InnoDB: Initializing buffer pool, size = 8.0M
+190515 13:45:51  InnoDB: Completed initialization of buffer pool
+InnoDB: The first specified data file .\ibdata1 did not exist:
+InnoDB: a new database to be created!
+190515 13:45:51  InnoDB: Setting file .\ibdata1 size to 10 MB
+InnoDB: Database physically writes the file full: wait...
+190515 13:45:51  InnoDB: Log file .\ib_logfile0 did not exist: new to be created
+InnoDB: Setting log file .\ib_logfile0 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+190515 13:45:51  InnoDB: Log file .\ib_logfile1 did not exist: new to be created
+InnoDB: Setting log file .\ib_logfile1 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+InnoDB: Doublewrite buffer not found: creating new
+InnoDB: Doublewrite buffer created
+InnoDB: Creating foreign key constraint system tables
+InnoDB: Foreign key constraint system tables created
+190515 13:45:51  InnoDB: Started; log sequence number 0 0
+190515 14:28:02 [Note] Plugin 'FEDERATED' is disabled.
+190515 14:28:02  InnoDB: Initializing buffer pool, size = 8.0M
+190515 14:28:02  InnoDB: Completed initialization of buffer pool
+190515 14:28:02  InnoDB: Started; log sequence number 0 44233
+190517 15:18:36 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:18:36  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:18:36  InnoDB: Completed initialization of buffer pool
+190517 15:18:36  InnoDB: Started; log sequence number 0 44233
+190517 15:29:55 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:29:55  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:29:55  InnoDB: Completed initialization of buffer pool
+190517 15:29:55  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+190517 15:30:05  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+190517 15:30:18 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:30:18  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:30:18  InnoDB: Completed initialization of buffer pool
+190517 15:30:19  InnoDB: Started; log sequence number 0 11600747
+190517 15:33:42 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:33:42  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:33:42  InnoDB: Completed initialization of buffer pool
+190517 15:33:42  InnoDB: Started; log sequence number 0 11600757
+190517 15:34:58 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:34:58  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:34:58  InnoDB: Completed initialization of buffer pool
+190517 15:34:58  InnoDB: Started; log sequence number 0 11600767
+190517 15:41:39 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:41:40  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:41:40  InnoDB: Completed initialization of buffer pool
+190517 15:41:40  InnoDB: Started; log sequence number 0 11600777
+190517 15:46:55 [Note] Plugin 'FEDERATED' is disabled.
+190517 15:46:56  InnoDB: Initializing buffer pool, size = 8.0M
+190517 15:46:56  InnoDB: Completed initialization of buffer pool
+190517 15:46:56  InnoDB: Started; log sequence number 0 11600939
+190617  9:24:17 [Note] Plugin 'FEDERATED' is disabled.
+190617  9:24:17  InnoDB: Initializing buffer pool, size = 8.0M
+190617  9:24:17  InnoDB: Completed initialization of buffer pool
+190617  9:24:17  InnoDB: Started; log sequence number 0 11600949
+190617  9:26:45 [Note] Plugin 'FEDERATED' is disabled.
+190617  9:26:45  InnoDB: Initializing buffer pool, size = 8.0M
+190617  9:26:45  InnoDB: Completed initialization of buffer pool
+190617  9:26:45  InnoDB: Started; log sequence number 0 11600949
+190617  9:28:24 [Note] Plugin 'FEDERATED' is disabled.
+190617  9:28:24  InnoDB: Initializing buffer pool, size = 8.0M
+190617  9:28:24  InnoDB: Completed initialization of buffer pool
+190617  9:28:24  InnoDB: Started; log sequence number 0 11600949
+190709 12:03:46 [Note] Plugin 'FEDERATED' is disabled.
+190709 12:03:46  InnoDB: Initializing buffer pool, size = 8.0M
+190709 12:03:46  InnoDB: Completed initialization of buffer pool
+190709 12:03:46  InnoDB: Started; log sequence number 0 11614756
+190709 12:03:56 [Note] Plugin 'FEDERATED' is disabled.
+190709 12:03:56  InnoDB: Initializing buffer pool, size = 8.0M
+190709 12:03:56  InnoDB: Completed initialization of buffer pool
+190709 12:03:56  InnoDB: Started; log sequence number 0 11614756
+190709 12:03:56 [Note] Event Scheduler: Loaded 0 events
+190709 12:03:56 [Note] C:\Users\hiepnh\Desktop\InnocomVtiger\bin\mysql\mysql-5.1.72-win32\bin\mysqld: ready for connections.
+Version: '5.1.72-community'  socket: ''  port: 3306  MySQL Community Server (GPL)

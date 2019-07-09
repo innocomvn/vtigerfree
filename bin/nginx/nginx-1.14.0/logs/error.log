@@ -1,0 +1,19 @@
+2019/05/15 14:27:57 [notice] 18036#15908: signal process started
+2019/05/15 14:29:06 [notice] 948#15804: signal process started
+2019/05/15 14:31:43 [notice] 8588#8044: signal process started
+2019/05/17 15:30:13 [notice] 4284#13328: signal process started
+2019/05/17 15:33:39 [notice] 10908#16892: signal process started
+2019/05/17 15:34:53 [notice] 16836#6316: signal process started
+2019/05/17 15:35:37 [notice] 8740#3080: signal process started
+2019/05/17 15:40:19 [notice] 1372#6080: signal process started
+2019/05/17 15:43:01 [notice] 15588#10696: signal process started
+2019/05/17 15:45:58 [notice] 19888#12456: signal process started
+2019/05/17 15:45:58 [error] 19888#12456: CreateFile() "C:\Users\hiepnh\Desktop\laragon-master\bin\nginx\nginx-1.14.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2019/05/17 15:47:48 [notice] 2776#11044: signal process started
+2019/06/17 09:24:17 [emerg] 8504#1756: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/06/17 09:24:26 [emerg] 12664#4596: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/06/17 09:28:18 [notice] 6080#7088: signal process started
+2019/06/17 09:51:30 [notice] 9096#9348: signal process started
+2019/07/09 12:15:58 [emerg] 13680#88: CreateFile() "C:/Users/hiepnh/Desktop/InnocomVtiger/etc/nginx/php_upstream.conf" failed (3: The system cannot find the path specified) in C:\Users\hiepnh\Desktop\InnocomVtiger\bin\nginx\nginx-1.14.0/conf/nginx.conf:35
+2019/07/09 12:15:58 [alert] 11520#18356: worker process 13680 exited with code 1
+2019/07/09 12:15:58 [alert] 11520#18356: could not respawn worker

@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+127.0.0.1 view-localhost # view localhost server
+127.0.0.1	duan.local
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# MAMP PRO hosts section START----------
+127.0.0.1	localhost
+127.0.0.1	duan.local
+127.0.0.1	doan.local.vn
+# MAMP PRO hosts section END  ----------127.0.0.1       activate.navicat.com
+127.0.0.1       activate.navicat.com
+127.0.0.1      vtiger.test          #laragon magic!   

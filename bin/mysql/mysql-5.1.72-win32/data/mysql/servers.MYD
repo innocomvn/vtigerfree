@@ -1,0 +1,6 @@
+190617  9:24:17 [Note] Event Scheduler: Loaded 0 events
+190617  9:24:17 [Note] C:\Users\huong\Downloads\Vitger-innocom\InnocomVtiger\bin\mysql\mysql-5.1.72-win32\bin\mysqld: ready for connections.
+Version: '5.1.72-community'  socket: ''  port: 3306  MySQL Community Server (GPL)
+190617  9:26:36 [Note] C:\Users\huong\Downloads\Vitger-innocom\InnocomVtiger\bin\mysql\mysql-5.1.72-win32\bin\mysqld: Normal shutdown
+
+190617  9:26:36 [Note] Event Scheduler: Purging the queue. 0 events
