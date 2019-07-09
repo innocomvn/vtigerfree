@@ -52,7 +52,7 @@ class ExtensionStore_Listings_View extends Vtiger_Index_View {
 		$viewer->assign('HEADER_SCRIPTS', $this->getHeaderScripts($request));
 		// $viewer->view('Promotions.tpl', $qualifiedModuleName);
 		// https://redmine.innocom.vn/issues/1941
-		$viewer->view('Promotions2.tpl', $qualifiedModuleName);
+		$viewer->view('promotions2.tpl', $qualifiedModuleName);
 		// https://redmine.innocom.vn/issues/1941 END 	
 	}
 
