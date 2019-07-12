@@ -9,413 +9,494 @@
 {* modules/Users/views/Login.php *}
 
 {strip}
-	<style>
-		body {
-			background: url(layouts/v7/resources/Images/login-background.jpg);
-			background-position: center;
-			background-size: cover;
-			width: 100%;
-			height: 96%;
-			background-repeat: no-repeat;
-		}
-		hr {
-			margin-top: 15px;
-			background-color: #7C7C7C;
-			height: 2px;
-			border-width: 0;
-		}
-		h3, h4 {
-			margin-top: 0px;
-		}
-		hgroup {
-			text-align:center;
-			margin-top: 4em;
-		}
-		input {
-			font-size: 16px;
-			padding: 10px 10px 10px 0px;
-			-webkit-appearance: none;
-			display: block;
-			color: #636363;
-			width: 100%;
-			border: none;
-			border-radius: 0;
-			border-bottom: 1px solid #757575;
-		}
-		input:focus {
-			outline: none;
-		}
-		label {
-			font-size: 16px;
-			font-weight: normal;
-			position: absolute;
-			pointer-events: none;
-			left: 0px;
-			top: 10px;
-			transition: all 0.2s ease;
-		}
-		input:focus ~ label, input.used ~ label {
-			top: -20px;
-			transform: scale(.75);
-			left: -12px;
-			font-size: 18px;
-		}
-		input:focus ~ .bar:before, input:focus ~ .bar:after {
-			width: 50%;
-		}
-		#page {
-			padding-top: 6%;
-		}
-		.widgetHeight {
-			height: 410px;
-			margin-top: 20px !important;
-		}
-		.loginDiv {
-			width: 380px;
-			margin: 0 auto;
-			border-radius: 4px;
-			box-shadow: 0 0 10px gray;
-			background-color: #FFFFFF;
-		}
-		.marketingDiv {
-			color: #303030;
-		}
-		.separatorDiv {
-			background-color: #7C7C7C;
-			width: 2px;
-			height: 460px;
-			margin-left: 20px;
-		}
-		.user-logo {
-			height: 110px;
-			margin: 0 auto;
-			padding-top: 40px;
-			padding-bottom: 20px;
-		}
-		.blockLink {
-			border: 1px solid #303030;
-			padding: 3px 5px;
-		}
-		.group {
-			position: relative;
-			margin: 20px 20px 40px;
-		}
-		.failureMessage {
-			color: red;
-			display: block;
-			text-align: center;
-			padding: 0px 0px 10px;
-		}
-		.successMessage {
-			color: green;
-			display: block;
-			text-align: center;
-			padding: 0px 0px 10px;
-		}
-		.inActiveImgDiv {
-			padding: 5px;
-			text-align: center;
-			margin: 30px 0px;
-		}
-		.app-footer p {
-			margin-top: 0px;
-		}
-		.footer {
-			background-color: #fbfbfb;
-			height:26px;
-		}
-		.bar {
-			position: relative;
-			display: block;
-			width: 100%;
-		}
-		.bar:before, .bar:after {
-			content: '';
-			width: 0;
-			bottom: 1px;
-			position: absolute;
-			height: 1px;
-			background: #35aa47;
-			transition: all 0.2s ease;
-		}
-		.bar:before {
-			left: 50%;
-		}
-		.bar:after {
-			right: 50%;
-		}
-		.button {
-			position: relative;
-			display: inline-block;
-			padding: 9px;
-			margin: .3em 0 1em 0;
-			width: 100%;
-			vertical-align: middle;
-			color: #fff;
-			font-size: 16px;
-			line-height: 20px;
-			-webkit-font-smoothing: antialiased;
-			text-align: center;
-			letter-spacing: 1px;
-			background: transparent;
-			border: 0;
-			cursor: pointer;
-			transition: all 0.15s ease;
-		}
-		.button:focus {
-			outline: 0;
-		}
-		.buttonBlue {
-			background-image: linear-gradient(to bottom, #35aa47 0px, #35aa47 100%)
-		}
-		.ripples {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			background: transparent;
-		}
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
-		//Animations
-		@keyframes inputHighlighter {
-			from {
-				background: #4a89dc;
-			}
-			to 	{
-				width: 0;
-				background: transparent;
-			}
-		}
-		@keyframes ripples {
-			0% {
-				opacity: 0;
-			}
-			25% {
-				opacity: 1;
-			}
-			100% {
-				width: 200%;
-				padding-bottom: 200%;
-				opacity: 0;
-			}
-		}
-	</style>
+        * {
+            box-sizing: content-box;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+        }
 
-	<span class="app-nav"></span>
-	<div class="col-lg-12">
-		<div class="col-lg-5">
-			<div class="loginDiv widgetHeight">
-				<img class="img-responsive user-logo" src="layouts/v7/resources/Images/vtiger.png">
-				<div>
-					<span class="{if !$ERROR}hide{/if} failureMessage" id="validationMessage">{$MESSAGE}</span>
-					<span class="{if !$MAIL_STATUS}hide{/if} successMessage">{$MESSAGE}</span>
-				</div>
+        body {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            font-weight: 300;
+        }
 
-				<div id="loginFormDiv">
-					<form class="form-horizontal" method="POST" action="index.php">
-						<input type="hidden" name="module" value="Users"/>
-						<input type="hidden" name="action" value="Login"/>
-						<div class="group">
-							<input id="username" type="text" name="username" placeholder="Username">
-							<span class="bar"></span>
-							<label>Username</label>
-						</div>
-						<div class="group">
-							<input id="password" type="password" name="password" placeholder="Password">
-							<span class="bar"></span>
-							<label>Password</label>
-						</div>
-						<div class="group">
-							<button type="submit" class="button buttonBlue">Sign in</button><br>
-							<a class="forgotPasswordLink" style="color: #15c;">forgot password?</a>
-						</div>
-					</form>
-				</div>
+        body ::-webkit-input-placeholder {
+            /* WebKit browsers */
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            font-weight: 300;
+        }
 
-				<div id="forgotPasswordDiv" class="hide">
-					<form class="form-horizontal" action="forgotPassword.php" method="POST">
-						<div class="group">
-							<input id="fusername" type="text" name="username" placeholder="Username" >
-							<span class="bar"></span>
-							<label>Username</label>
-						</div>
-						<div class="group">
-							<input id="email" type="email" name="emailId" placeholder="Email" >
-							<span class="bar"></span>
-							<label>Email</label>
-						</div>
-						<div class="group">
-							<button type="submit" class="button buttonBlue forgot-submit-btn">Submit</button><br>
-							<span>Please enter details and submit<a class="forgotPasswordLink pull-right" style="color: #15c;">Back</a></span>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+        body :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            opacity: 1;
+            font-weight: 300;
+        }
 
-		<div class="col-lg-1">
-			<div class="separatorDiv"></div>
-		</div>
+        body ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            opacity: 1;
+            font-weight: 300;
+        }
 
-		<div class="col-lg-5">
-			<div class="marketingDiv widgetHeight">
-				{if $JSON_DATA}
-					<div class="scrollContainer">
-						{assign var=ALL_BLOCKS_COUNT value=0}
-						{foreach key=BLOCK_NAME item=BLOCKS_DATA from=$JSON_DATA}
-							{if $BLOCKS_DATA}
-								<div>
-									<h4>{$BLOCKS_DATA[0].heading}</h4>
-									<ul class="bxslider">
-										{foreach item=BLOCK_DATA from=$BLOCKS_DATA}
-											<li class="slide">
-												{assign var=ALL_BLOCKS_COUNT value=$ALL_BLOCKS_COUNT+1}
-												{if $BLOCK_DATA.image}
-													<div class="col-lg-3" style="min-height: 100px;"><img src="{$BLOCK_DATA.image}" style="width: 100%;height: 100%;margin-top: 10px;"/></div>
-													<div class="col-lg-9">
-												{else}
-													<div class="col-lg-12">
-												{/if}
-												<div title="{$BLOCK_DATA.summary}">
-													<h3><b>{$BLOCK_DATA.displayTitle}</b></h3>
-													{$BLOCK_DATA.displaySummary}<br><br>
-													<a href="{$BLOCK_DATA.url}" target="_blank"><u>{$BLOCK_DATA.urlalt}</u></a>
-												</div>
-												{if $BLOCK_DATA.image}
-													</div>
-												{else}
-													</div>
-												{/if}
-											</li>
-										{/foreach}
-									</ul>
-								</div>
-								{if $ALL_BLOCKS_COUNT neq $DATA_COUNT}
-									<br>
-									<hr>
-								{/if}
-							{/if}
-						{/foreach}
-					</div>
-				{else}
-					<div class="inActiveImgDiv">
-						<div>
-							<h4>Get more out of Vtiger with extensions from</h4>
-							<h4>Vtiger Marketplace</h4>
-						</div>
-						<a href="https://marketplace.vtiger.com/app/listings" target="_blank" style="margin-right: 25px;"><img src="layouts/v7/resources/Images/extensionstore.png" style="width: 85%; height: 100%; margin-top: 25px;"/></a>
-					</div>
-				{/if}
-				</div>
-			</div>
-		</div>
+        body :-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            font-weight: 300;
+        }
 
-		<script>
-			jQuery(document).ready(function () {
-				var validationMessage = jQuery('#validationMessage');
-				var forgotPasswordDiv = jQuery('#forgotPasswordDiv');
+        .wrapper {
+            background: url(https://crm.innocom.vn/abms.jpg) no-repeat 30% 25% fixed;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-				var loginFormDiv = jQuery('#loginFormDiv');
-				loginFormDiv.find('#password').focus();
+        .wrapper.form-success .container h1 {
+            -webkit-transform: translateY(85px) !important;
+            transform: translateY(85px) !important;
+        }
 
-				loginFormDiv.find('a').click(function () {
-					loginFormDiv.toggleClass('hide');
-					forgotPasswordDiv.toggleClass('hide');
-					validationMessage.addClass('hide');
-				});
+        .container {
+            max-width: 341px;
+            margin: 100px auto;
+            padding: 20px 0;
+            height: 320px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-				forgotPasswordDiv.find('a').click(function () {
-					loginFormDiv.toggleClass('hide');
-					forgotPasswordDiv.toggleClass('hide');
-					validationMessage.addClass('hide');
-				});
+        @media only screen and (max-width: 767px) {
+            .container {
+                margin: 44% auto;
+            }
 
-				loginFormDiv.find('button').on('click', function () {
-					var username = loginFormDiv.find('#username').val();
-					var password = jQuery('#password').val();
-					var result = true;
-					var errorMessage = '';
-					if (username === '') {
-						errorMessage = 'Please enter valid username';
-						result = false;
-					} else if (password === '') {
-						errorMessage = 'Please enter valid password';
-						result = false;
-					}
-					if (errorMessage) {
-						validationMessage.removeClass('hide').text(errorMessage);
-					}
-					return result;
-				});
+            .login-page-footer {
+                display: none;
+            }
+        }
 
-				forgotPasswordDiv.find('button').on('click', function () {
-					var username = jQuery('#forgotPasswordDiv #fusername').val();
-					var email = jQuery('#email').val();
+        .container h1 {
+            font-size: 40px !important;
+            -webkit-transition-duration: 1s !important;
+            transition-duration: 1s !important;
+            -webkit-transition-timing-function: ease-in-put !important;
+            transition-timing-function: ease-in-put !important;
+            font-weight: 200 !important;
+            color: white;
 
-					var email1 = email.replace(/^\s+/, '').replace(/\s+$/, '');
-					var emailFilter = /^[^@]+@[^@.]+\.[^@]*\w\w$/;
-					var illegalChars = /[\(\)\<\>\,\;\:\\\"\[\]]/;
+        }
 
-					var result = true;
-					var errorMessage = '';
-					if (username === '') {
-						errorMessage = 'Please enter valid username';
-						result = false;
-					} else if (!emailFilter.test(email1) || email == '') {
-						errorMessage = 'Please enter valid email address';
-						result = false;
-					} else if (email.match(illegalChars)) {
-						errorMessage = 'The email address contains illegal characters.';
-						result = false;
-					}
-					if (errorMessage) {
-						validationMessage.removeClass('hide').text(errorMessage);
-					}
-					return result;
-				});
-				jQuery('input').blur(function (e) {
-					var currentElement = jQuery(e.currentTarget);
-					if (currentElement.val()) {
-						currentElement.addClass('used');
-					} else {
-						currentElement.removeClass('used');
-					}
-				});
+        .container h4 {
+            font-size: 13px !important;
+            -webkit-transition-duration: 1s !important;
+            transition-duration: 1s !important;
+            -webkit-transition-timing-function: ease-in-put !important;
+            transition-timing-function: ease-in-put !important;
+            font-weight: 300 !important;
+            color: white;
+            letter-spacing: 1.2px;
+            padding-top: 5px;
 
-				var ripples = jQuery('.ripples');
-				ripples.on('click.Ripples', function (e) {
-					jQuery(e.currentTarget).addClass('is-active');
-				});
+        }
 
-				ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
-					jQuery(e.currentTarget).removeClass('is-active');
-				});
-				loginFormDiv.find('#username').focus();
+        form {
+            padding: 20px 0 !important;
+            position: relative !important;
+            z-index: 2 !important;
+        }
 
-				var slider = jQuery('.bxslider').bxSlider({
-					auto: true,
-					pause: 4000,
-					nextText: "",
-					prevText: "",
-					autoHover: true
-				});
-				jQuery('.bx-prev, .bx-next, .bx-pager-item').live('click',function(){ slider.startAuto(); });
-				jQuery('.bx-wrapper .bx-viewport').css('background-color', 'transparent');
-				jQuery('.bx-wrapper .bxslider li').css('text-align', 'left');
-				jQuery('.bx-wrapper .bx-pager').css('bottom', '-15px');
+        form input {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            outline: 0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            width: 250px !important;
+            border-radius: 3px !important;
+            padding: 10px 15px !important;
+            margin: 0 auto 10px auto !important;
+            display: block !important;
+            text-align: center !important;
+            font-size: 18px !important;
+            color: white !important;
+            -webkit-transition-duration: 0.25s !important;
+            transition-duration: 0.25s !important;
+            font-weight: 300 !important;
+        }
 
-				var params = {
-					theme		: 'dark-thick',
-					setHeight	: '100%',
-					advanced	:	{
-										autoExpandHorizontalScroll:true,
-										setTop: 0
-									}
-				};
-				jQuery('.scrollContainer').mCustomScrollbar(params);
-			});
-		</script>
-		</div>
-	{/strip}
+        form input:hover {
+            background-color: rgba(255, 255, 255, 0.4) !important;
+        }
+
+        form input:focus {
+            background-color: white !important;
+            width: 260px !important;
+            color: #0288D1 !important;
+        }
+
+        form button {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            outline: 0 !important;
+
+            border: 0 !important;
+            padding: 10px 15px !important;
+            color: #0288D1 !important;
+            border-radius: 3px !important;
+            width: 250px !important;
+            cursor: pointer !important;
+            font-size: 18px !important;
+            -webkit-transition-duration: 0.25s !important;
+            transition-duration: 0.25s !important;
+        }
+
+        form button:hover {
+            /*background-color: #f5f7f9 !important;*/
+        }
+
+        .bg-bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .bg-bubbles li {
+            position: absolute;
+            list-style: none;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.15);
+            bottom: -160px;
+            -webkit-animation: square 25s infinite;
+            animation: square 25s infinite;
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+
+        .bg-bubbles li:nth-child(1) {
+            left: 10%;
+        }
+
+        .bg-bubbles li:nth-child(2) {
+            left: 20%;
+            width: 80px;
+            height: 80px;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            -webkit-animation-duration: 17s;
+            animation-duration: 17s;
+        }
+
+        .bg-bubbles li:nth-child(3) {
+            left: 25%;
+            -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+        }
+
+        .bg-bubbles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            -webkit-animation-duration: 22s;
+            animation-duration: 22s;
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .bg-bubbles li:nth-child(5) {
+            left: 70%;
+        }
+
+        .bg-bubbles li:nth-child(6) {
+            left: 80%;
+            width: 120px;
+            height: 120px;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .bg-bubbles li:nth-child(7) {
+            left: 32%;
+            width: 160px;
+            height: 160px;
+            -webkit-animation-delay: 7s;
+            animation-delay: 7s;
+        }
+
+        .bg-bubbles li:nth-child(8) {
+            left: 55%;
+            width: 20px;
+            height: 20px;
+            -webkit-animation-delay: 15s;
+            animation-delay: 15s;
+            -webkit-animation-duration: 40s;
+            animation-duration: 40s;
+        }
+
+        .bg-bubbles li:nth-child(9) {
+            left: 25%;
+            width: 10px;
+            height: 10px;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            -webkit-animation-duration: 40s;
+            animation-duration: 40s;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .bg-bubbles li:nth-child(10) {
+            left: 90%;
+            width: 160px;
+            height: 160px;
+            -webkit-animation-delay: 11s;
+            animation-delay: 11s;
+        }
+
+        @-webkit-keyframes square {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            100% {
+                -webkit-transform: translateY(-700px) rotate(600deg);
+                transform: translateY(-700px) rotate(600deg);
+            }
+        }
+
+        @keyframes square {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            100% {
+                -webkit-transform: translateY(-700px) rotate(600deg);
+                transform: translateY(-700px) rotate(600deg);
+            }
+        }
+
+        #login-button {
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid white !important;
+            color: white !important;
+        }
+
+        #login-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #forgot {
+            color: white !important;
+        }
+
+        #logo-bottom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #logo-bottom img {
+            width: 300px;
+            opacity: 0.5;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="libraries/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#login-button").click(function (event) {
+            event.preventDefault();
+
+            $('form').fadeOut(500);
+            $('.wrapper').addClass('form-success');
+        });
+    </script>
+    <div class="wrapper">
+        <div class="container">
+            <img style="width:50%" id='vtiger' src="test/logo/vtiger-crm-logo.png">
+            <h4>Branch Engagement System</h4>
+            <div id="loginFormDiv">
+                <form class="form-horizontal" method="POST" action="index.php">
+                    <input type="hidden" name="module" value="Users"/>
+                    <input type="hidden" name="action" value="Login"/>
+                    <div class="group">
+                        <input id="username" type="text" name="username" placeholder="Username">
+                        <span class="bar"></span>
+                    </div>
+                    <div class="group">
+                        <input id="password" type="password" name="password" placeholder="Password">
+                        <span class="bar"></span>
+                    </div>
+                    <div class="group">
+                        <button type="submit" class="button buttonBlue">Sign in</button><br>
+                    </div>
+                    <div class="group" style="margin-top: 20px;">
+                        <a class="forgotPasswordLink" style="color: #15c;">forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <div id="forgotPasswordDiv" class="hide">
+                <form class="form-horizontal" action="forgotPassword.php" method="POST">
+                    <div class="group">
+                        <input id="fusername" type="text" name="username" placeholder="Username" >
+                        <span class="bar"></span>
+                    </div>
+                    <div class="group">
+                        <input id="email" type="email" name="emailId" placeholder="Email" >
+                        <span class="bar"></span>
+                    </div>
+                    <div class="group">
+                        <button type="submit" class="button buttonBlue forgot-submit-btn">Submit</button><br>
+                    </div>
+                    <div class="group" style="margin-top: 20px;">
+                        <span>Please enter details and submit<a class="forgotPasswordLink pull-right" style="color: #15c; margin-right: 15%;">Back</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            var validationMessage = jQuery('#validationMessage');
+            var forgotPasswordDiv = jQuery('#forgotPasswordDiv');
+
+            var loginFormDiv = jQuery('#loginFormDiv');
+            loginFormDiv.find('#password').focus();
+
+            loginFormDiv.find('a').click(function () {
+                loginFormDiv.toggleClass('hide');
+                forgotPasswordDiv.toggleClass('hide');
+                validationMessage.addClass('hide');
+            });
+
+            forgotPasswordDiv.find('a').click(function () {
+                loginFormDiv.toggleClass('hide');
+                forgotPasswordDiv.toggleClass('hide');
+                validationMessage.addClass('hide');
+            });
+
+            loginFormDiv.find('button').on('click', function () {
+                var username = loginFormDiv.find('#username').val();
+                var password = jQuery('#password').val();
+                var result = true;
+                var errorMessage = '';
+                if (username === '') {
+                    errorMessage = 'Please enter valid username';
+                    result = false;
+                } else if (password === '') {
+                    errorMessage = 'Please enter valid password';
+                    result = false;
+                }
+                if (errorMessage) {
+                    validationMessage.removeClass('hide').text(errorMessage);
+                }
+                return result;
+            });
+
+            forgotPasswordDiv.find('button').on('click', function () {
+                var username = jQuery('#forgotPasswordDiv #fusername').val();
+                var email = jQuery('#email').val();
+
+                var email1 = email.replace(/^\s+/, '').replace(/\s+$/, '');
+                var emailFilter = /^[^@]+@[^@.]+\.[^@]*\w\w$/;
+                var illegalChars = /[\(\)\<\>\,\;\:\\\"\[\]]/;
+
+                var result = true;
+                var errorMessage = '';
+                if (username === '') {
+                    errorMessage = 'Please enter valid username';
+                    result = false;
+                } else if (!emailFilter.test(email1) || email == '') {
+                    errorMessage = 'Please enter valid email address';
+                    result = false;
+                } else if (email.match(illegalChars)) {
+                    errorMessage = 'The email address contains illegal characters.';
+                    result = false;
+                }
+                if (errorMessage) {
+                    validationMessage.removeClass('hide').text(errorMessage);
+                }
+                return result;
+            });
+            jQuery('input').blur(function (e) {
+                var currentElement = jQuery(e.currentTarget);
+                if (currentElement.val()) {
+                    currentElement.addClass('used');
+                } else {
+                    currentElement.removeClass('used');
+                }
+            });
+
+            var ripples = jQuery('.ripples');
+            ripples.on('click.Ripples', function (e) {
+                jQuery(e.currentTarget).addClass('is-active');
+            });
+
+            ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
+                jQuery(e.currentTarget).removeClass('is-active');
+            });
+            loginFormDiv.find('#username').focus();
+
+            var slider = jQuery('.bxslider').bxSlider({
+                auto: true,
+                pause: 4000,
+                nextText: "",
+                prevText: "",
+                autoHover: true
+            });
+            jQuery('.bx-prev, .bx-next, .bx-pager-item').live('click', function () {
+                slider.startAuto();
+            });
+            jQuery('.bx-wrapper .bx-viewport').css('background-color', 'transparent');
+            jQuery('.bx-wrapper .bxslider li').css('text-align', 'left');
+            jQuery('.bx-wrapper .bx-pager').css('bottom', '-15px');
+
+            var params = {
+                theme: 'dark-thick',
+                setHeight: '100%',
+                advanced: {
+                    autoExpandHorizontalScroll: true,
+                    setTop: 0
+                }
+            };
+            jQuery('.scrollContainer').mCustomScrollbar(params);
+        });
+    </script>
+    </div>
+{/strip}
