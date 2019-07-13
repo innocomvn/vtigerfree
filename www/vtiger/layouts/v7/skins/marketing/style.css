@@ -2938,8 +2938,8 @@ th {
 .importBlockContainer {
   color: #596875;
 }
-/******************************************* 
-************* Social Buttons *************** 
+/*******************************************
+************* Social Buttons ***************
 ********************************************/
 .btn-block + .btn-block {
   margin-top: 5px;
@@ -2968,8 +2968,8 @@ th {
   text-align: center;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-/******************************************* 
-************* Updates Timeline *************** 
+/*******************************************
+************* Updates Timeline ***************
 ********************************************/
 .recentActivitiesContainer .history {
   margin: 0 auto;
@@ -3151,8 +3151,8 @@ th {
   vertical-align: super;
   font-size: 13px;
 }
-/******************************************* 
-************* Task Management ************** 
+/*******************************************
+************* Task Management **************
 ********************************************/
 #taskManagementContainer .data-body {
   margin-bottom: 50px;
@@ -3233,8 +3233,8 @@ th {
 #taskManagementContainer .mCustomScrollbar .mCSB_inside > .mCSB_container {
   margin-right: 13px;
 }
-/******************************************* 
-************* Settings Page ************** 
+/*******************************************
+************* Settings Page **************
 ********************************************/
 .settingsPageDiv.content-area {
   margin-right: 0;
@@ -3505,7 +3505,7 @@ th {
 th {
   padding: 6px;
 }
-/******************************************* 
+/*******************************************
 ********** CustomerPortal styles start ********
 ********************************************/
 .cp-tabs .enabledModules {
@@ -3819,7 +3819,7 @@ th {
 .quickPreview .recentActivitiesContainer .history {
   padding: 0;
 }
-/******************************************* 
+/*******************************************
 ********** Calendar view styles ************
 ********************************************/
 .calendar-sidebar {
@@ -3978,7 +3978,7 @@ th {
   display: inline-block;
   text-align: center;
 }
-/******************************************* 
+/*******************************************
 ********** Calendar view styles end ********
 
 ********** Documents Module styles *********
@@ -4042,7 +4042,7 @@ tr.file > td.fileOwnerData {
   width: 100px;
   white-space: pre-wrap;
 }
-/******************************************* 
+/*******************************************
 ********** Documents Module styles end *****
 ********************************************/
 .engagementsContainer .engagements_content {
@@ -4102,7 +4102,7 @@ tr.file > td.fileOwnerData {
   font-size: 15px;
   padding: 1% 0;
 }
-/******************************************* 
+/*******************************************
 ********** Mailroom view styles start ********
 ********************************************/
 .mailroomBanner {
@@ -4494,7 +4494,7 @@ form[name="notification_settings"] .select2-choice {
 .mentionMessageHeader .MultiFile-remove {
   color: #FFFFFF;
 }
-/******************************************* 
+/*******************************************
 ********** Mailroom view styles end ********
 ********************************************/
 .detailview-header {
@@ -4611,7 +4611,7 @@ form[name="notification_settings"] .select2-choice {
   max-width: 80px;
   vertical-align: bottom;
 }
-/******************************************* 
+/*******************************************
 ********** Groups view styles ********
 ********************************************/
 #s2id_memberList li > div,
@@ -4688,10 +4688,10 @@ form[name="notification_settings"] .select2-choice {
   margin: 0px;
   color: #444444;
 }
-/******************************************* 
+/*******************************************
 ********** Groups view styles  ends********
 ********************************************/
-/******************************************* 
+/*******************************************
 ********** Picklist Css ********
 ********************************************/
 .pickListValue {
@@ -4708,7 +4708,7 @@ form[name="notification_settings"] .select2-choice {
   padding: 2px 1px !important;
   line-height: 15px;
 }
-/******************************************* 
+/*******************************************
 ************* Dashboard Styles *************
 ********************************************/
 li.dashboardWidget {
@@ -4843,7 +4843,7 @@ li.dashboardWidget {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/******************************************* 
+/*******************************************
 ********** Picklist DependencyGraph ********
 ********************************************/
 #dependencyGraph .tableHeading {
@@ -4871,7 +4871,7 @@ li.dashboardWidget {
 #dependencyGraph .dependencyMapping .pickListDependencyTable .selectedCell {
   background: #a9cbf5;
 }
-/******************************************* 
+/*******************************************
 ********** Rewriting select2 for consistency********
 ********************************************/
 .select2-container .select2-choice {
@@ -5120,7 +5120,7 @@ TN-34230 .row .nav > li > a:hover {
 .commentAttachmentName {
   font-size: 11px;
 }
-/******************************************* 
+/*******************************************
 ********** Layout Editor ********
 ********************************************/
 .marginBottom10px {
@@ -5274,7 +5274,7 @@ TN-34230 .row .nav > li > a:hover {
   margin-left: 5px;
   word-break: break-all;
 }
-/******************************************* 
+/*******************************************
 ************** Tax Management **************
 ********************************************/
 #TaxCalculationsContainer .table tr:first-child,
@@ -5316,7 +5316,7 @@ TN-34230 .row .nav > li > a:hover {
   max-height: 500px;
   overflow-y: auto;
 }
-/******************************************* 
+/*******************************************
 ********** Workflows ********
 ********************************************/
 #workflow_edit .editViewBody {
@@ -5526,7 +5526,7 @@ TN-34230 .row .nav > li > a:hover {
   width: 100%;
   overflow-x: auto;
 }
-/******************************************* 
+/*******************************************
 *************** Mail Manager ***************
 ********************************************/
 #mm_searchButton {
@@ -5957,7 +5957,7 @@ TN-34230 .row .nav > li > a:hover {
 div.tooltip-inner {
   max-width: 400px;
 }
-/******************************************* 
+/*******************************************
 ********** Menu Editor ********
 ********************************************/
 .sortable.appContainer.ui-sortable {
@@ -7789,3 +7789,15 @@ a.btnReport:hover {
   height: 450px;
   overflow: auto;
 }
+
+/*https://redmine.innocom.vn/issues/1959 - start*/
+.global-nav {
+  background-color: #1e73be;
+}
+.search-link {
+  background: white;
+}
+.global-nav .navbar-nav > li div a {
+  color: white;
+}
+/*https://redmine.innocom.vn/issues/1959 - end*/
